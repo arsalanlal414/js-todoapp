@@ -29,7 +29,7 @@ function addcontact(){
     var delTagTd=document.createElement("td")
     var delTag=document.createElement("button")
     delTag.setAttribute("class","deltag")
-    delTag.setAttribute("onclick","delcontact()")
+    delTag.setAttribute("onclick","delcontact(this)")
     var delValue=document.createTextNode("delete")
     delTag.appendChild(delValue)
     delTagTd.appendChild(delTag)
@@ -42,6 +42,10 @@ function addcontact(){
     console.log(list)
 }
 
+function delcontact(e){
+    e.parentNode.parentNode.remove()
+}
+
 function del(){
-    trT.innerHtml=""
+    list.innerHTML=""
 }
