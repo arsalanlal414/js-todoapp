@@ -40,12 +40,17 @@ function addcontact(){
 
     list.appendChild(trTag)
 
+    document.getElementById('name').value= ""
+    document.getElementById('number').value =""
+
 }
 function editcontact(e){
-    var edName=prompt("Please enter the name")
+    var name = e.parentNode.parentNode.firstChild.firstChild.nodeValue
+    var edName=prompt("Please enter the name",name)
     e.parentNode.parentNode.firstChild.firstChild.nodeValue = edName
 
-    var edNumber=+prompt("please enter the contact number")
+    var number = e.parentNode.parentNode.childNodes[1].firstChild.nodeValue
+    var edNumber=prompt("please enter the contact number",number)
     e.parentNode.parentNode.childNodes[1].firstChild.nodeValue = edNumber
     
 }
