@@ -21,6 +21,7 @@ function addcontact(){
     var editTagTd=document.createElement("td")
     var editTag=document.createElement("button")
     editTag.setAttribute("class","edittag")
+    editTag.setAttribute("onclick","editcontact(this)")
     var editValue=document.createTextNode("Edit")
     editTag.appendChild(editValue)
     editTagTd.appendChild(editTag)
@@ -39,7 +40,14 @@ function addcontact(){
 
     list.appendChild(trTag)
 
-    console.log(list)
+}
+function editcontact(e){
+    var edName=prompt("Please enter the name")
+    e.parentNode.parentNode.firstChild.firstChild.nodeValue = edName
+
+    var edNumber=+prompt("please enter the contact number")
+    e.parentNode.parentNode.childNodes[1].firstChild.nodeValue = edNumber
+    
 }
 
 function delcontact(e){
